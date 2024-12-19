@@ -1,4 +1,5 @@
 import GraphQLService from "@/lib/services/graphql-service";
+import { TypePageData } from "@/lib/types/data/page/TypePageData";
 import { DocumentNode } from "graphql";
 
 const isPreview = process.env.CONTENTFUL_API_MODE === "preview" ? true : false;
@@ -42,9 +43,15 @@ export const ContentfulDataService = {
   },
 
   // Fetch data by Slug
-  async fetchDataBySlug(query: DocumentNode, slug: string) {
+  async fetchDataBySlug(
+    query: DocumentNode,
+    slug: string
+  ): Promise<TypePageData> {
     try {
-      const data = await GraphQLService.request(query, { slug, isPreview });
+      const data = await GraphQLService.request<TypePageData>(query, {
+        slug,
+        isPreview
+      });
       return data;
     } catch (error) {
       if (error instanceof Error) {
