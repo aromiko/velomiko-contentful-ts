@@ -1,4 +1,4 @@
-import { TypeComponentHeaderWithoutLinkResolutionResponse } from "@/lib/types/contentful/TypeComponentHeader";
+import { TypeComponentHeaderWithoutLinkResolutionResponse } from "@/lib/types/contentful";
 
 type HeaderProps = {
   data: TypeComponentHeaderWithoutLinkResolutionResponse["fields"];

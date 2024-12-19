@@ -1,11 +1,13 @@
 import { ComponentRegistryForQuery } from "@/lib/configurations/component-registry";
 import { ContentfulDataService } from "@/lib/services/contentful-data-service";
+import QUERY_FOOTER_BY_ID from "@/queries/component-blocks/graphql/footer.gql";
 import QUERY_HEADER_BY_ID from "@/queries/component-blocks/graphql/header.gql";
 import { print as graphQLPrint } from "graphql";
 
 // Use the computed property syntax to map the component contentTypes to its query
 const componentQueryMapping = {
-  [ComponentRegistryForQuery.Header]: QUERY_HEADER_BY_ID
+  [ComponentRegistryForQuery.Header]: QUERY_HEADER_BY_ID,
+  [ComponentRegistryForQuery.Footer]: QUERY_FOOTER_BY_ID
 };
 
 export const ComponentBlocksFacade = {
