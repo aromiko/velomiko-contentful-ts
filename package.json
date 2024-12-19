@@ -8,12 +8,15 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "generate-types": "dotenv -e .env.local -- cross-var cf-content-types-generator -s %CONTENTFUL_SPACE_ID% -t %CONTENTFUL_MANAGEMENT_ACCESS_TOKEN% -e %CONTENTFUL_ENVIRONMENT% -o ./src/lib/types/contentful -X -r"
   },
   "dependencies": {
     "@trivago/prettier-plugin-sort-imports": "^5.2.0",
     "contentful": "^11.3.3",
     "contentful-management": "^11.40.2",
+    "cross-var": "^1.1.0",
+    "dotenv-cli": "^7.4.4",
     "graphql": "^16.10.0",
     "graphql-request": "^7.1.2",
     "graphql-tag": "^2.12.6",
