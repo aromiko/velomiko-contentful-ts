@@ -5,4 +5,4 @@ export const SectionComponents = {
   Header: [ComponentRegistry.Header],
   Main: [ComponentRegistry.Hero],
   Footer: [ComponentRegistry.Footer]
-} as const;
+};

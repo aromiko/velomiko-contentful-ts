@@ -13,6 +13,7 @@ export const PageTemplatesFacade = {
         QUERY_PAGE_BY_SLUG,
         slug
       );
+
       return data?.pageCollection?.items[0] || null;
     } catch (error) {
       if (error instanceof Error) {

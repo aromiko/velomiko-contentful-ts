@@ -1,3 +1,4 @@
+import SectionRenderer from "@/components/component-blocks/adaptive-renderers/section-renderer/section-renderer";
 import { SectionComponents } from "@/lib/configurations/section-component";
 import { filterComponentsForAssembly } from "@/lib/utils/component-filter";
 import { PageTemplatesFacade } from "@/queries/page-templates/page-templates-facade";
@@ -9,8 +10,6 @@ type PageProps = {
 
 export default async function Page({ slug }: PageProps) {
   const page = await PageTemplatesFacade.getPageBySlug(slug);
-  console.log(page);
-  console.log(page.pageContentsCollection.items);
 
   if (!page || slug == "404") return notFound();
 
@@ -19,5 +18,27 @@ export default async function Page({ slug }: PageProps) {
     SectionComponents.Header
   );
 
-  return <div>{page.pageName}</div>;
+  const mainComponents = filterComponentsForAssembly(
+    page.pageContentsCollection.items,
+    SectionComponents.Main
+  );
+
+  const footerComponents = filterComponentsForAssembly(
+    page.pageContentsCollection.items,
+    SectionComponents.Footer
+  );
+
+  console.log(page.pageContentsCollection.items);
+  console.log(SectionComponents.Header);
+  console.log(headerComponents);
+
+  return (
+    <>
+      <SectionRenderer components={headerComponents} section="header" />
+
+      <SectionRenderer components={mainComponents} section={"main"} />
+
+      <SectionRenderer components={footerComponents} section={"footer"} />
+    </>
+  );
 }

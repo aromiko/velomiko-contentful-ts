@@ -1,9 +1,9 @@
 import { EntrySkeletonType } from "contentful";
 
 export interface PageContentItem extends EntrySkeletonType {
+  __typename: string;
   sys: {
     id: string;
-    contentTypeId: string;
   };
   fields: Record<string, unknown>;
 }
