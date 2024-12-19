@@ -11,12 +11,14 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.0",
     "contentful": "^11.3.3",
     "contentful-management": "^11.40.2",
     "graphql": "^16.10.0",
     "graphql-request": "^7.1.2",
     "graphql-tag": "^2.12.6",
     "next": "15.1.1",
+    "prettier": "^3.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
