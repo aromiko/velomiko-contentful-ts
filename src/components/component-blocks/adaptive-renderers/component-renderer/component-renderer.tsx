@@ -1,10 +1,6 @@
 import Footer from "@/components/component-blocks/footer/footer";
 import Header from "@/components/component-blocks/header/header";
 import { ComponentRegistry } from "@/lib/configurations/component-registry";
-import {
-  TypeComponentFooterWithoutLinkResolutionResponse,
-  TypeComponentHeaderWithoutLinkResolutionResponse
-} from "@/lib/types/contentful";
 import { PageContentItem } from "@/lib/types/data/TypePageData";
 import { toLowerStartChar } from "@/lib/utils/string-extensions";
 import { ComponentBlocksFacade } from "@/queries/component-blocks/component-blocks-facade";
@@ -19,14 +15,7 @@ export default async function ComponentRenderer({
   try {
     // Specify here only the components that will need to be directly hydrated with Contentful data
     // Based on the mapped component __typename, <Component> will render the actual React Component
-    const componentMapping: Record<
-      string,
-      React.ComponentType<{
-        data:
-          | TypeComponentHeaderWithoutLinkResolutionResponse["fields"]
-          | TypeComponentFooterWithoutLinkResolutionResponse["fields"];
-      }>
-    > = {
+    const componentMapping = {
       [ComponentRegistry.Header]: Header,
       [ComponentRegistry.Footer]: Footer
     };
