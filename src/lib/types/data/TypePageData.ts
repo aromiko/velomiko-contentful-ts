@@ -1,7 +1,21 @@
-import { TypePageWithoutLinkResolutionResponse } from "@/lib/types/contentful/TypePage";
+import { EntrySkeletonType } from "contentful";
 
-export type TypePageData = {
-  pageCollection?: {
-    items: TypePageWithoutLinkResolutionResponse["fields"][];
+export interface PageContentItem extends EntrySkeletonType {
+  sys: {
+    id: string;
+    contentTypeId: string;
   };
-};
+  fields: Record<string, unknown>;
+}
+
+export interface TypePageData {
+  pageCollection: {
+    items: {
+      pageName: string;
+      pageSlug?: string;
+      pageContentsCollection: {
+        items: PageContentItem[];
+      };
+    }[];
+  };
+}

@@ -1,8 +1,9 @@
 import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
 
 export interface TypePageFields {
-    name: EntryFieldTypes.Symbol;
-    pageSlug: EntryFieldTypes.Symbol;
+    pageName: EntryFieldTypes.Symbol;
+    pageSlug?: EntryFieldTypes.Symbol;
+    pageContents?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<EntrySkeletonType>>;
 }
 
 export type TypePageSkeleton = EntrySkeletonType<TypePageFields, "page">;

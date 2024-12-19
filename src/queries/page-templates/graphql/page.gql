@@ -1,8 +1,16 @@
 query QUERY_PAGE_BY_SLUG($slug: String!, $isPreview: Boolean!) {
   pageCollection(where: { pageSlug: $slug }, limit: 1, preview: $isPreview) {
     items {
-      name
+      pageName
       pageSlug
+      pageContentsCollection {
+        items {
+          __typename
+          sys {
+            id
+          }
+        }
+      }
     }
   }
 }
