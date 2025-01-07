@@ -28,10 +28,6 @@ export default async function Page({ slug }: PageProps) {
     SectionComponents.Footer
   );
 
-  console.log(page.pageContentsCollection.items);
-  console.log(SectionComponents.Header);
-  console.log(headerComponents);
-
   return (
     <>
       <SectionRenderer components={headerComponents} section="header" />
