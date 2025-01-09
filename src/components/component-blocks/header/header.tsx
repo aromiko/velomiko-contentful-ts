@@ -5,5 +5,5 @@ type HeaderProps = {
 };
 
 export default function Header({ data }: HeaderProps) {
-  return <div>{data.headerName}</div>;
+  return <div className="text-lg">{data.headerName}</div>;
 }
