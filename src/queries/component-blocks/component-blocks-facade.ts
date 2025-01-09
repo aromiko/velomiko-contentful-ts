@@ -1,27 +1,21 @@
-import { ComponentRegistryForQuery } from "@/lib/configurations/component-registry";
+import { componentQueryMapping } from "@/lib/configurations/component-query-mapping";
 import { ContentfulDataService } from "@/lib/services/contentful-data-service";
-import QUERY_FOOTER_BY_ID from "@/queries/component-blocks/graphql/footer.gql";
-import QUERY_HEADER_BY_ID from "@/queries/component-blocks/graphql/header.gql";
+import { TypeComponentData } from "@/lib/types/data/TypeComponentData";
 import { print as graphQLPrint } from "graphql";
-
-// Use the computed property syntax to map the component contentTypes to its query
-const componentQueryMapping = {
-  [ComponentRegistryForQuery.Header]: QUERY_HEADER_BY_ID,
-  [ComponentRegistryForQuery.Footer]: QUERY_FOOTER_BY_ID
-};
 
 export const ComponentBlocksFacade = {
   // Get component data by specifying its contentType and ID. Dynamic query mapping is handled here.
   async getComponentDataById(contentType: string, id: string) {
     try {
       // Fetch actual data by sending the determined component query and its ID as parameters
-      const data = await ContentfulDataService.fetchDataById(
+      const data = (await ContentfulDataService.fetchDataById(
         componentQueryMapping[contentType],
         id
-      );
+      )) as TypeComponentData;
 
       // GraphQL API response data to return depends on the contentType
-      return data[contentType] || null;
+      const contentKey = contentType as keyof TypeComponentData;
+      return data[contentKey] || null;
 
       // Otherwise, if there's no matching data according to its contentType, throw an error
     } catch (error) {

@@ -25,10 +25,10 @@ export const ContentfulDataService = {
   },
 
   // Fetch data by ID
-  async fetchDataById<T>(query: DocumentNode, id: string): Promise<T> {
+  async fetchDataById(query: DocumentNode, id: string) {
     try {
       const data = await GraphQLService.request(query, { id, isPreview });
-      return data as T;
+      return data;
     } catch (error) {
       if (error instanceof Error) {
         throw new Error(
