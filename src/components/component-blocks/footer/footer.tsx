@@ -1,7 +1,7 @@
-import { TypeComponentFooterWithoutLinkResolutionResponse } from "@/lib/types/contentful";
+import { TypeComponentFooter } from "@/lib/types/contentful";
 
 type FooterProps = {
-  data: TypeComponentFooterWithoutLinkResolutionResponse["fields"];
+  data: TypeComponentFooter<"WITHOUT_UNRESOLVABLE_LINKS", string>["fields"];
 };
 
 export default function Footer({ data }: FooterProps) {

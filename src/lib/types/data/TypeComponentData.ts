@@ -1,9 +1,15 @@
 import {
-  TypeComponentFooterWithoutLinkResolutionResponse,
-  TypeComponentHeaderWithoutLinkResolutionResponse
+  TypeComponentFooter,
+  TypeComponentHeader
 } from "@/lib/types/contentful";
 
 export type TypeComponentData = {
-  componentHeader?: TypeComponentHeaderWithoutLinkResolutionResponse["fields"];
-  componentFooter?: TypeComponentFooterWithoutLinkResolutionResponse["fields"];
+  componentHeader?: TypeComponentHeader<
+    "WITHOUT_UNRESOLVABLE_LINKS",
+    string
+  >["fields"];
+  componentFooter?: TypeComponentFooter<
+    "WITHOUT_UNRESOLVABLE_LINKS",
+    string
+  >["fields"];
 };

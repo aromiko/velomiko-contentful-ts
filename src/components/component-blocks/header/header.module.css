@@ -1,0 +1,7 @@
+.headerWrapper {
+  @apply w-full bg-black flex items-center justify-center;
+}
+
+.headerContents {
+  @apply container flex h-20 text-white;
+}
