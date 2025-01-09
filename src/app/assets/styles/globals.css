@@ -15,7 +15,7 @@
 }
 
 body {
-  @apply min-h-screen;
+  @apply min-h-screen flex flex-col;
 
   color: var(--foreground);
   background: var(--background);
