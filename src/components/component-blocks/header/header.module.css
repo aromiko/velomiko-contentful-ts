@@ -1,7 +1,7 @@
 .headerWrapper {
-  @apply w-full bg-black flex items-center justify-center;
+  @apply w-full flex items-center justify-center;
 }
 
 .headerContents {
-  @apply container flex h-20 text-white;
+  @apply container flex h-20;
 }
