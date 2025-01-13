@@ -1,0 +1,19 @@
+fragment BasicMediaFragment on ComponentBasicMedia {
+  sys {
+    id
+  }
+  basicMediaName
+  basicMediaImage {
+    url
+    description
+    height
+    width
+  }
+  basicMediaAltText
+  basicMediaHeight
+  basicMediaWidth
+  basicMediaFill
+  basicMediaEager
+  basicMediaLinkUrl
+  basicMediaLinkIsExternal
+}

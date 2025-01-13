@@ -1,7 +1,10 @@
-import { TypeComponentBasicLinkList, TypeComponentMedia } from "@/lib/types";
+import {
+  TypeComponentBasicLinkList,
+  TypeComponentBasicMedia
+} from "@/lib/types";
 
 export interface TypeComponentHeader {
   headerName: string;
-  headerLogo?: TypeComponentMedia;
+  headerLogo?: TypeComponentBasicMedia;
   headerLinks?: TypeComponentBasicLinkList;
 }
