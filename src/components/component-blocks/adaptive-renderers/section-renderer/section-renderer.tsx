@@ -1,10 +1,11 @@
 import ComponentRenderer from "@/components/component-blocks/adaptive-renderers/component-renderer/component-renderer";
-import { TypePageContentItem } from "@/lib/types";
+import { TypeComponentData, TypePageContentItem } from "@/lib/types";
 import React from "react";
 
 type SectionRendererProps = {
   components: TypePageContentItem[];
   section?: React.ElementType;
+  dataProps?: Record<string, TypeComponentData>;
   otherProps?: Record<string, unknown>;
 };
 
@@ -12,6 +13,7 @@ type SectionRendererProps = {
 export default function SectionRenderer({
   components,
   section,
+  dataProps = {},
   otherProps = {}
 }: SectionRendererProps) {
   try {
@@ -22,7 +24,7 @@ export default function SectionRenderer({
 
     return (
       // Renders specific Component dynamically based on contents, with respect to the containing section
-      <Section {...otherProps}>
+      <Section {...dataProps} {...otherProps}>
         {components.map((content) => (
           <ComponentRenderer key={content.sys.id} content={content} />
         ))}
