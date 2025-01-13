@@ -1,8 +1,8 @@
 // Filter components based on the content entry's "__typename" to prepare for SectionRenderer component assembly process under a section
-import { PageContentItem } from "@/lib/types/data/TypePageData";
+import { TypePageContentItem } from "@/lib/types";
 
 export const filterComponentsForAssembly = (
-  contents: PageContentItem[],
+  contents: TypePageContentItem[],
   typeNames: string[]
 ) =>
   contents.filter((contentEntry) =>

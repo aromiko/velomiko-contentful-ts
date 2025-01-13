@@ -1,12 +1,12 @@
 import Footer from "@/components/component-blocks/footer/footer";
 import Header from "@/components/component-blocks/header/header";
 import { ComponentRegistry } from "@/lib/configurations/component-registry";
-import { PageContentItem } from "@/lib/types/data/TypePageData";
+import { TypeComponentData, TypePageContentItem } from "@/lib/types";
 import { toLowerStartChar } from "@/lib/utils/string-extensions";
 import { ComponentBlocksFacade } from "@/queries/component-blocks/component-blocks-facade";
 
 type ComponentRendererProps = {
-  content: PageContentItem;
+  content: TypePageContentItem;
 };
 
 export default async function ComponentRenderer({
@@ -21,7 +21,9 @@ export default async function ComponentRenderer({
     };
 
     // Determine the component to render based on the __typename mapping
-    const Component = componentMapping[content.__typename];
+    const Component = componentMapping[
+      content.__typename
+    ] as React.ComponentType<TypeComponentData>;
 
     // GraphQL API returns Pascal-cased contentTypes. However, in order to use this value for another GraphQL API call, convert first character
     // to lowercase to adhere to its component contentType as parameter for querying. For coherence, use defined ComponentRegistry __typeNames.

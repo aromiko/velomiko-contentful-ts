@@ -1,6 +1,6 @@
 import { componentQueryMapping } from "@/lib/configurations/component-query-mapping";
 import { ContentfulDataService } from "@/lib/services/contentful-data-service";
-import { TypeComponentData } from "@/lib/types/data/TypeComponentData";
+import { TypeComponentData } from "@/lib/types";
 import { print as graphQLPrint } from "graphql";
 
 export const ComponentBlocksFacade = {

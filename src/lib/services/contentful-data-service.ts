@@ -1,5 +1,5 @@
 import GraphQLService from "@/lib/services/graphql-service";
-import { TypePageData } from "@/lib/types/data/TypePageData";
+import { TypePageData } from "@/lib/types";
 import { DocumentNode } from "graphql";
 
 const isPreview = process.env.CONTENTFUL_API_MODE === "preview" ? true : false;

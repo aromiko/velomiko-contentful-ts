@@ -10,7 +10,7 @@ export const ComponentRegistry = {
   Footer: "ComponentFooter",
   Header: "ComponentHeader",
   Hero: "ComponentHero"
-} as const;
+};
 
 export const ComponentRegistryForQuery = Object.fromEntries(
   Object.entries(ComponentRegistry).map(([key, value]) => [

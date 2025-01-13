@@ -1,5 +1,10 @@
 query QUERY_HEADER_BY_ID($id: String!, $isPreview: Boolean!) {
   componentHeader(id: $id, preview: $isPreview) {
     headerName
+    headerLogo {
+      url
+      height
+      width
+    }
   }
 }

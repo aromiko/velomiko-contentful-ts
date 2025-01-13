@@ -1,5 +1,5 @@
 import ComponentRenderer from "@/components/component-blocks/adaptive-renderers/component-renderer/component-renderer";
-import { PageContentItem } from "@/lib/types/data/TypePageData";
+import { PageContentItem } from "@/lib/types/page-templates/TypePageData";
 import React from "react";
 
 type SectionRendererProps = {

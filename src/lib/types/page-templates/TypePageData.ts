@@ -1,6 +1,6 @@
 import { EntrySkeletonType } from "contentful";
 
-export interface PageContentItem extends EntrySkeletonType {
+export interface TypePageContentItem extends EntrySkeletonType {
   __typename: string;
   sys: {
     id: string;
@@ -14,7 +14,7 @@ export interface TypePageData {
       pageName: string;
       pageSlug?: string;
       pageContentsCollection: {
-        items: PageContentItem[];
+        items: TypePageContentItem[];
       };
     }[];
   };
