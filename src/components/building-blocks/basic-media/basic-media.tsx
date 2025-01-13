@@ -1,8 +1,7 @@
+import { BasicMediaLink } from "@/components/building-blocks/basic-media/basic-media-link/basic-media-with-link";
 import { TypeComponentBasicMedia } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-
-import { BasicMediaLink } from "./basic-media-link/basic-media-with-link";
 
 type BasicMediaProps = {
   data: TypeComponentBasicMedia;
