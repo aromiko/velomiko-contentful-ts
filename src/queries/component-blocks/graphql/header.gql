@@ -3,6 +3,7 @@ query QUERY_HEADER_BY_ID($id: String!, $isPreview: Boolean!) {
     headerName
     headerLogo {
       url
+      description
       height
       width
     }

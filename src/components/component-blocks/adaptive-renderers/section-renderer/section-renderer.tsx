@@ -1,9 +1,9 @@
 import ComponentRenderer from "@/components/component-blocks/adaptive-renderers/component-renderer/component-renderer";
-import { PageContentItem } from "@/lib/types/page-templates/TypePageData";
+import { TypePageContentItem } from "@/lib/types";
 import React from "react";
 
 type SectionRendererProps = {
-  components: PageContentItem[];
+  components: TypePageContentItem[];
   section?: React.ElementType;
   otherProps?: Record<string, unknown>;
 };

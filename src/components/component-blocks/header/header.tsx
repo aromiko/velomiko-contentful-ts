@@ -17,7 +17,7 @@ export default function Header({ data }: HeaderProps) {
             src={data.headerLogo?.url}
             width={100}
             height={70}
-            alt="header logo"
+            alt={data.headerLogo?.description || ""}
           />
         )}
 

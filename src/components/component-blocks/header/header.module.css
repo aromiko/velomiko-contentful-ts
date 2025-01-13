@@ -3,5 +3,5 @@
 }
 
 .headerContents {
-  @apply container flex h-20 justify-between p-4;
+  @apply container flex min-h-20 justify-between p-4;
 }

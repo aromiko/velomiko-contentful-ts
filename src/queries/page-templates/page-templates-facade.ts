@@ -1,9 +1,8 @@
 import { ContentfulDataService } from "@/lib/services/contentful-data-service";
-import { print as graphQLPrint } from "graphql";
-
 // Contentful GraphQL Queries
 
-import QUERY_PAGE_BY_SLUG from "./graphql/page.gql";
+import QUERY_PAGE_BY_SLUG from "@/queries/page-templates/graphql/page.gql";
+import { print as graphQLPrint } from "graphql";
 
 export const PageTemplatesFacade = {
   // Get Page Contentful data by slug

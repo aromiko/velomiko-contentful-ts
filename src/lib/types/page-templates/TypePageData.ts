@@ -1,11 +1,15 @@
+import {
+  TypeComponentData,
+  TypeComponentRegistryLowerCased
+} from "@/lib/types";
 import { EntrySkeletonType } from "contentful";
 
 export interface TypePageContentItem extends EntrySkeletonType {
-  __typename: string;
+  __typename: TypeComponentRegistryLowerCased;
   sys: {
     id: string;
   };
-  fields: Record<string, unknown>;
+  fields: Record<string, TypeComponentData>;
 }
 
 export interface TypePageData {
