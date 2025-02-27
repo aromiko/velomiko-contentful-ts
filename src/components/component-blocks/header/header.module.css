@@ -1,12 +1,12 @@
-.wrapper {
+.mainContainer {
   @apply w-full flex items-center justify-center;
 }
 
-.contents {
+.innerContainer {
   @apply container flex min-h-20 justify-between p-4;
 }
 
-.logoWrapper {
+.logoContainer {
   @apply h-20 w-52;
 
   filter: invert(var(--invert));

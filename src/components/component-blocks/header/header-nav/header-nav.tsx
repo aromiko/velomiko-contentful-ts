@@ -11,13 +11,13 @@ type HeaderNavProps = {
 };
 
 function HeaderNav({ navLinks }: HeaderNavProps) {
-  // Properly destructuring props
-  const pathname = usePathname(); // Get the current route
+  const pathname = usePathname();
 
   return (
     <nav className="flex gap-4">
       {navLinks.map((linkItem) => {
         const isActive = pathname === linkItem.basicLinkUrl;
+
         return (
           <Button
             key={linkItem.basicLinkName}

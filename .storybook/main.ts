@@ -6,12 +6,12 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
+    "@storybook/addon-interactions"
   ],
   framework: {
     name: "@storybook/nextjs",
-    options: {},
+    options: {}
   },
-  staticDirs: ["..\\public"],
+  staticDirs: ["..\\public"]
 };
 export default config;

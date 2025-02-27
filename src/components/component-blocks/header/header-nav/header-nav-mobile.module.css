@@ -1,11 +1,15 @@
 .links {
-  @apply flex flex-col gap-4 mt-4;
+  @apply flex flex-col gap-4;
 }
 
 .sheetHeader {
-  @apply flex items-start pt-4;
+  @apply flex items-start mt-4;
 }
 
 .sheetTitle {
-  @apply w-fit space-x-4;
+  @apply w-full flex gap-4;
+}
+
+.sheetTitleLink {
+  @apply font-extrabold text-2xl text-foreground outline-foreground p-0;
 }

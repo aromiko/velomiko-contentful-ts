@@ -14,10 +14,10 @@ type HeaderProps = {
 
 export default function Header({ data }: HeaderProps) {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.contents}>
+    <div className={styles.mainContainer}>
+      <div className={styles.innerContainer}>
         {data.headerLogo && (
-          <div className={styles.logoWrapper}>
+          <div className={styles.logoContainer}>
             <BasicMedia data={data.headerLogo} />
           </div>
         )}

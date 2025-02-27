@@ -1,3 +1,5 @@
+"use client";
+
 import ThemeToggle from "@/components/theme/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,8 +12,10 @@ import {
   SheetTrigger
 } from "@/components/ui/sheet";
 import { TypeComponentBasicLink } from "@/lib/types";
+import clsx from "clsx";
 import { Menu } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import styles from "./header-nav-mobile.module.css";
 
@@ -22,6 +26,7 @@ type HeaderNavMobileProps = {
 function HeaderNavMobile({ navLinks }: HeaderNavMobileProps) {
   const date = new Date();
   const year = date.getFullYear();
+  const pathname = usePathname();
 
   return (
     <Sheet>
@@ -32,13 +37,9 @@ function HeaderNavMobile({ navLinks }: HeaderNavMobileProps) {
         <SheetHeader className={styles.sheetHeader}>
           <SheetTitle className={styles.sheetTitle}>
             <ThemeToggle />
-            <SheetClose asChild>
-              <Button
-                variant="link"
-                className="font-extrabold text-2xl text-foreground outline-foreground"
-                asChild
-              >
-                <Link href="/">miko aro</Link>
+            <SheetClose>
+              <Button variant="link" className={styles.sheetTitleLink} asChild>
+                <Link href="/">velomiko</Link>
               </Button>
             </SheetClose>
           </SheetTitle>
@@ -46,20 +47,29 @@ function HeaderNavMobile({ navLinks }: HeaderNavMobileProps) {
 
         <nav className={styles.mainContainer}>
           <ul className={styles.links}>
-            {navLinks.map((linkItem) => (
-              <li key={linkItem.basicLinkName}>
-                <SheetClose>
-                  <Button variant="link" asChild>
+            {navLinks.map((linkItem) => {
+              const isActive = pathname === linkItem.basicLinkUrl;
+
+              return (
+                <li key={linkItem.basicLinkName}>
+                  <Button
+                    variant="link"
+                    asChild
+                    className="w-full text-foreground"
+                  >
                     <Link
                       href={linkItem.basicLinkUrl || "/"}
-                      className={styles.link}
+                      className={clsx(
+                        "font-semibold",
+                        isActive && "bg-primary text-primary-foreground" // Active class
+                      )}
                     >
                       {linkItem.basicLinkText}
                     </Link>
                   </Button>
-                </SheetClose>
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ul>
         </nav>
         <SheetFooter className="mt-auto">
