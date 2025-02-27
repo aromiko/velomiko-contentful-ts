@@ -1,0 +1,11 @@
+.links {
+  @apply flex flex-col gap-4 mt-4;
+}
+
+.sheetHeader {
+  @apply flex items-start pt-4;
+}
+
+.sheetTitle {
+  @apply w-fit space-x-4;
+}
