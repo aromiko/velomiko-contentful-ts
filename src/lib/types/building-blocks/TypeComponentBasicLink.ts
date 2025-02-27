@@ -1,7 +1,7 @@
 export interface TypeComponentBasicLink {
   basicLinkName: string;
-  linkText?: string;
-  linkUrl?: string;
-  linkIsExternal: boolean;
-  linkIsButton: boolean;
+  basicLinkText?: string;
+  basicLinkUrl?: string;
+  basicLinkIsExternal: boolean;
+  basicLinkIsButton: boolean;
 }
