@@ -1,3 +1,4 @@
+#import "@/queries/building-blocks/graphql/fragments/basic-link.gql"
 #import "@/queries/building-blocks/graphql/fragments/basic-media.gql"
 
 query QUERY_HEADER_BY_ID($id: String!, $isPreview: Boolean!) {
@@ -5,6 +6,13 @@ query QUERY_HEADER_BY_ID($id: String!, $isPreview: Boolean!) {
     headerName
     headerLogo {
       ...BasicMediaFragment
+    }
+    headerLinks {
+      linkListGroupCollection {
+        items {
+          ...BasicLinkFragment
+        }
+      }
     }
   }
 }
