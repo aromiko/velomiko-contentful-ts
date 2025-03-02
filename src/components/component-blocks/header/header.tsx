@@ -12,7 +12,7 @@ type HeaderProps = {
   data: TypeComponentHeader;
 };
 
-export default function Header({ data }: HeaderProps) {
+export default function MainHeader({ data }: HeaderProps) {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.innerContainer}>

@@ -18,3 +18,9 @@ export type {
   TypePageContentItem,
   TypePageData
 } from "@/lib/types/page-templates/TypePageData";
+
+export type {
+  TypePageStravaActivity,
+  TypePageStravaActivityFull,
+  TypePageStravaStats
+} from "@/lib/types/page-templates/TypePageStravaData";

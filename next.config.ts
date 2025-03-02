@@ -25,6 +25,16 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "videos.ctfassets.net",
         port: ""
+      },
+      {
+        protocol: "https",
+        hostname: "*.cloudfront.net",
+        port: ""
+      },
+      {
+        protocol: "https",
+        hostname: "maps.googleapis.com",
+        port: ""
       }
     ]
   }
