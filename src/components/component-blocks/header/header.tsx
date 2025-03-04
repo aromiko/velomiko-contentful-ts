@@ -1,43 +1,12 @@
-import BasicMedia from "@/components/building-blocks/basic-media/basic-media";
-import HeaderNav from "@/components/component-blocks/header/header-nav/header-nav";
-import HeaderNavMobile from "@/components/component-blocks/header/header-nav/header-nav-mobile";
-import ThemeToggle from "@/components/theme/theme-toggle";
+import HeaderNavFlip from "@/components/component-blocks/header/header-nav/header-nav-flip";
 import { TypeComponentHeader } from "@/lib/types";
-
-// Ensure clsx is installed for easier class management
-
-import styles from "./header.module.css";
 
 type HeaderProps = {
   data: TypeComponentHeader;
 };
 
-export default function MainHeader({ data }: HeaderProps) {
-  return (
-    <div className={styles.mainContainer}>
-      <div className={styles.innerContainer}>
-        {data.headerLogo && (
-          <div className={styles.logoContainer}>
-            <BasicMedia data={data.headerLogo} />
-          </div>
-        )}
-        {data.headerLinks?.basicLinkListGroupCollection?.items && (
-          <div className={styles.navContainer}>
-            <HeaderNav
-              navLinks={data.headerLinks.basicLinkListGroupCollection.items}
-            />
-            <ThemeToggle />
-          </div>
-        )}
+const MainHeader = ({ data }: HeaderProps) => {
+  return <HeaderNavFlip data={data} />;
+};
 
-        <div className={styles.mobileNavContainer}>
-          {data.headerLinks?.basicLinkListGroupCollection?.items && (
-            <HeaderNavMobile
-              navLinks={data.headerLinks.basicLinkListGroupCollection.items}
-            />
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
+export default MainHeader;

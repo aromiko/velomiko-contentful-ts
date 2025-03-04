@@ -38,7 +38,8 @@ const nextConfig: NextConfig = {
         port: ""
       }
     ]
-  }
+  },
+  transpilePackages: ["lucide-react"]
 };
 
 export default nextConfig;

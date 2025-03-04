@@ -25,6 +25,27 @@ export const Default: Story = {
         basicMediaWidth: 100,
         basicMediaFill: false,
         basicMediaEager: true
+      },
+      headerLinks: {
+        basicLinkListName: "Header Links",
+        basicLinkListGroupCollection: {
+          items: [
+            {
+              basicLinkName: "Home",
+              basicLinkText: "Home",
+              basicLinkUrl: "/",
+              basicLinkIsButton: false,
+              basicLinkIsExternal: false
+            },
+            {
+              basicLinkName: "About",
+              basicLinkText: "About",
+              basicLinkUrl: "/about",
+              basicLinkIsButton: false,
+              basicLinkIsExternal: false
+            }
+          ]
+        }
       }
     }
   }

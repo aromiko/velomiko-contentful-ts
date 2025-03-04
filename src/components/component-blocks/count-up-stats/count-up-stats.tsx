@@ -1,7 +1,6 @@
 "use client";
 
-import { animate, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import CountUp from "./count-up";
 
 type CountUpStatsProps = {
   header: string;
@@ -15,7 +14,7 @@ type CountUpStatsProps = {
 
 export const CountUpStats = ({ header, stats }: CountUpStatsProps) => {
   return (
-    <div className="mx-auto px-4 py-20 md:py-24">
+    <section className="px-4 py-20 md:py-24">
       <h2 className="mb-8 text-center text-base text-primary sm:text-4xl md:mb-16 font-semibold">
         {header}
       </h2>
@@ -30,7 +29,7 @@ export const CountUpStats = ({ header, stats }: CountUpStatsProps) => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -41,32 +40,19 @@ interface Props {
   subheading?: string;
 }
 
-const Stat = ({ num, suffix, decimals = 0, subheading }: Props) => {
-  const ref = useRef<HTMLSpanElement | null>(null);
-  const isInView = useInView(ref);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    if (!isInView) return;
-    if (hasAnimated) return;
-
-    animate(0, num, {
-      duration: 2.5,
-      onUpdate(value) {
-        if (!ref.current) return;
-
-        ref.current.textContent = value.toLocaleString("en-US", {
-          maximumFractionDigits: 0
-        });
-        setHasAnimated(true);
-      }
-    });
-  }, [num, decimals, isInView, hasAnimated]);
-
+const Stat = ({ num, suffix, subheading }: Props) => {
   return (
-    <div className="flex w-96 flex-col items-center py-8 lg:py-0">
+    <div className="flex w-96 min-h-[172px] lg:min-h-24 flex-col items-center py-8 lg:py-0">
       <p className="mb-2 text-center text-7xl font-semibold lg:text-6xl">
-        <span ref={ref}></span> {suffix && isInView && suffix}
+        <CountUp
+          from={0}
+          to={num}
+          separator=","
+          direction="up"
+          duration={0.5}
+          className="count-up-text"
+          suffix={suffix}
+        />
       </p>
       <p className="max-w-48 text-center text-neutral-600">
         {subheading && subheading}

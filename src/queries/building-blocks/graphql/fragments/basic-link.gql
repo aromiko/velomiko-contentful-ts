@@ -4,6 +4,7 @@ fragment BasicLinkFragment on ComponentBasicLink {
   }
   basicLinkName
   basicLinkUrl
+  basicLinkIcon
   basicLinkText
   basicLinkIsButton
   basicLinkIsExternal

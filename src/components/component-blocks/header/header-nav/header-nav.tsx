@@ -1,41 +1,51 @@
-"use client";
+import BasicMedia from "@/components/building-blocks/basic-media/basic-media";
+import { HeaderNavHamburgerMenu } from "@/components/component-blocks/header/header-nav-mobile/header-nav-hamburger-menu";
+import HeaderNavLink from "@/components/component-blocks/header/header-nav/header-nav-link";
+import ThemeToggle from "@/components/theme/theme-toggle";
+import { TypeComponentHeader } from "@/lib/types";
+import { Dispatch, SetStateAction } from "react";
 
-import { Button } from "@/components/ui/button";
-import { TypeComponentBasicLink } from "@/lib/types";
-import clsx from "clsx";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-type HeaderNavProps = {
-  navLinks: TypeComponentBasicLink[];
-};
-
-function HeaderNav({ navLinks }: HeaderNavProps) {
-  const pathname = usePathname();
-
+const HeaderNav = ({
+  data,
+  setIsOpen
+}: {
+  data: TypeComponentHeader;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}) => {
   return (
-    <nav className="flex gap-4">
-      {navLinks.map((linkItem) => {
-        const isActive = pathname === linkItem.basicLinkUrl;
+    <div className="flex items-center gap-6 justify-between w-full">
+      {data.headerLogo && (
+        <div className="invert-theme">
+          <BasicMedia data={data.headerLogo} />
+        </div>
+      )}
 
-        return (
-          <Button
-            key={linkItem.basicLinkName}
-            variant="link"
-            asChild
-            className={clsx(
-              "text-foreground font-semibold",
-              isActive && "bg-primary text-primary-foreground" // Active class
+      <div className="flex items-center gap-6">
+        {data.headerLinks?.basicLinkListGroupCollection?.items && (
+          <ul className="flex gap-6">
+            {data.headerLinks?.basicLinkListGroupCollection?.items.map(
+              (linkItem) => (
+                <HeaderNavLink
+                  key={linkItem.basicLinkName}
+                  linkData={linkItem}
+                />
+              )
             )}
-          >
-            <Link href={linkItem.basicLinkUrl || "/"}>
-              {linkItem.basicLinkText}
-            </Link>
-          </Button>
-        );
-      })}
-    </nav>
+          </ul>
+        )}
+
+        <div className="hidden lg:block">
+          <ThemeToggle />
+        </div>
+      </div>
+
+      <div className="block lg:hidden text-foreground text-2xl">
+        <HeaderNavHamburgerMenu
+          onHamburgerClick={() => setIsOpen((pv) => !pv)}
+        />
+      </div>
+    </div>
   );
-}
+};
 
 export default HeaderNav;

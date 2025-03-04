@@ -6,6 +6,10 @@ body {
   @apply min-h-screen flex flex-col overflow-y-scroll text-lg;
 
   font-family: var(--font-outfit), Arial, Helvetica, sans-serif;
+
+  header {
+    @apply sticky top-0 z-50;
+  }
 }
 
 @layer base {

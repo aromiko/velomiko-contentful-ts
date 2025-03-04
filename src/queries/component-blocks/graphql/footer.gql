@@ -1,5 +1,14 @@
+#import "@/queries/building-blocks/graphql/fragments/basic-link.gql"
+
 query QUERY_FOOTER_BY_ID($id: String!, $isPreview: Boolean!) {
   componentFooter(id: $id, preview: $isPreview) {
     footerName
+    footerLinks {
+      basicLinkListGroupCollection {
+        items {
+          ...BasicLinkFragment
+        }
+      }
+    }
   }
 }

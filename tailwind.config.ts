@@ -12,6 +12,9 @@ export default {
     container: {
       center: true
     },
+    invert: {
+      theme: "var(--invert)"
+    },
     extend: {
       colors: {
         background: "hsl(var(--background))",

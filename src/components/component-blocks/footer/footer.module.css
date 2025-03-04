@@ -1,7 +1,0 @@
-.footerWrapper {
-  @apply w-full flex items-center justify-center;
-}
-
-.footerContents {
-  @apply container flex h-20;
-}
