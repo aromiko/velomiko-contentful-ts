@@ -25,10 +25,9 @@ const HeaderNav = ({
           <ul className="flex gap-6">
             {data.headerLinks?.basicLinkListGroupCollection?.items.map(
               (linkItem) => (
-                <HeaderNavLink
-                  key={linkItem.basicLinkName}
-                  linkData={linkItem}
-                />
+                <li key={linkItem.basicLinkName}>
+                  <HeaderNavLink linkData={linkItem} />
+                </li>
               )
             )}
           </ul>
