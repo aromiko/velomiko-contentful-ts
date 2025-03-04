@@ -88,12 +88,11 @@ async function RidesPage() {
                       {activity.map?.summary_polyline && (
                         <AspectRatio ratio={16 / 9}>
                           <Image
-                            src={`https://maps.googleapis.com/maps/api/staticmap?size=600x400&path=weight:3%7Ccolor:blue%7Cenc:${encodeURIComponent(
-                              activity.map.summary_polyline
-                            )}&key=${process.env.GOOGLE_MAPS_API_KEY}`}
+                            src={`/api/map?polyline=${encodeURIComponent(activity.map.summary_polyline)}`}
                             alt="Activity Route"
                             width="600"
                             height="400"
+                            unoptimized
                           />
                         </AspectRatio>
                       )}
