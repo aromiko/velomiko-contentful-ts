@@ -33,8 +33,6 @@ async function RidesPage() {
   const activities = await getStravaActivities();
   const stats = await getStravaStats();
 
-  console.log(activities);
-
   // Fetch only activities that have photos
   const activitiesWithPhotos = await Promise.all(
     activities
