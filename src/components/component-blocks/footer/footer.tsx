@@ -23,7 +23,7 @@ function MainFooter({ data }: MainFooterProps) {
   const year = date.getFullYear();
 
   return (
-    <footer>
+    <footer className="bg-primary text-primary-foreground">
       <div className="container py-20 px-4">
         <ul className="flex gap-4">
           {data.footerLinks?.basicLinkListGroupCollection?.items &&

@@ -23,7 +23,7 @@ const HeaderNavMenuLink = ({ linkData }: HeaderMenuLinkProps) => {
       >
         <span
           className={cn("flex items-center w-full justify-center p-2", {
-            "bg-primary": isActive
+            "bg-primary text-primary-foreground": isActive
           })}
         >
           {linkData.basicLinkText}

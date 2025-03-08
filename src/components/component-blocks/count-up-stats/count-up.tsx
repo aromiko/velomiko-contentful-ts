@@ -116,7 +116,7 @@ export default function CountUp({
         0
       </span>{" "}
       {/* Ensures "0" is always present initially */}
-      {suffix && <span>{suffix}</span>}
+      {suffix && <span className="text-inherit">{suffix}</span>}
     </>
   );
 }

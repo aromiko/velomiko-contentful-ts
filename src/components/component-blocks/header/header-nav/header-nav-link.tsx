@@ -18,8 +18,8 @@ const HeaderNavLink = ({ linkData }: HeaderNavLinkProps) => {
     <Link
       href={linkData.basicLinkUrl || "/"}
       className={cn(
-        "hidden lg:block h-[40px] overflow-hidden font-medium rounded hover:bg-gray-100 transition-colors",
-        { "bg-primary": isActive }
+        "hidden lg:block h-[40px] overflow-hidden font-medium rounded hover:bg-secondary transition-colors",
+        { "bg-primary hover:bg-primary/90": isActive }
       )}
     >
       <motion.div whileHover={{ y: -40 }}>
@@ -32,7 +32,10 @@ const HeaderNavLink = ({ linkData }: HeaderNavLinkProps) => {
         </span>
         <span
           className={cn(
-            "flex items-center h-[40px] px-4 text-primary-foreground"
+            "flex items-center h-[40px] px-4 text-secondary-foreground",
+            {
+              "text-primary-foreground": isActive
+            }
           )}
         >
           {linkData.basicLinkText}

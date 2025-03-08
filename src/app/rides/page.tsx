@@ -86,12 +86,11 @@ async function RidesPage() {
                   <div className="flex flex-col lg:flex-row gap-8">
                     <div className="w-full lg:w-1/2">
                       {activity.map?.summary_polyline && (
-                        <AspectRatio ratio={16 / 9}>
+                        <AspectRatio ratio={3 / 2}>
                           <Image
                             src={`/api/map?polyline=${encodeURIComponent(activity.map.summary_polyline)}`}
                             alt="Activity Route"
-                            width="600"
-                            height="400"
+                            fill
                             unoptimized
                           />
                         </AspectRatio>
