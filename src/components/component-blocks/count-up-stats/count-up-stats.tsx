@@ -14,7 +14,7 @@ type CountUpStatsProps = {
 
 export const CountUpStats = ({ header, stats }: CountUpStatsProps) => {
   return (
-    <section className="px-4 py-20 md:py-24 bg-destructive text-destructive-foreground">
+    <section className="px-4 py-20 md:py-24 bg-secondary text-secondary-foreground">
       <h2 className="mb-8 text-center text-4xl md:mb-16 font-semibold">
         {header}
       </h2>
@@ -23,7 +23,7 @@ export const CountUpStats = ({ header, stats }: CountUpStatsProps) => {
         {stats.map((stat, index) => (
           <div key={index} className="flex flex-col lg:flex-row items-center">
             {index !== 0 && (
-              <div className="h-[2px] w-12 bg-destructive-foreground lg:h-12 lg:w-[2px]" />
+              <div className="h-[2px] w-12 bg-secondary-foreground lg:h-12 lg:w-[2px]" />
             )}
             <Stat {...stat} />
           </div>
