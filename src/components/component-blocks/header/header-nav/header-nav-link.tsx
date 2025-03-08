@@ -23,13 +23,17 @@ const HeaderNavLink = ({ linkData }: HeaderNavLinkProps) => {
       )}
     >
       <motion.div whileHover={{ y: -40 }}>
-        <span className="flex items-center h-[40px] px-4 text-foreground">
+        <span
+          className={cn("flex items-center h-[40px] px-4 text-foreground", {
+            "text-primary-foreground": isActive
+          })}
+        >
           {linkData.basicLinkText}
         </span>
         <span
-          className={cn("flex items-center h-[40px] px-4 text-primary", {
-            "text-foreground": isActive
-          })}
+          className={cn(
+            "flex items-center h-[40px] px-4 text-primary-foreground"
+          )}
         >
           {linkData.basicLinkText}
         </span>

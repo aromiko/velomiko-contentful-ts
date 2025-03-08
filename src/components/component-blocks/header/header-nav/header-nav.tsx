@@ -15,7 +15,7 @@ const HeaderNav = ({
   return (
     <div className="flex items-center gap-6 justify-between w-full">
       {data.headerLogo && (
-        <div className="invert-theme">
+        <div className="invert-theme hover:opacity-50 transition-opacity duration-300">
           <BasicMedia data={data.headerLogo} />
         </div>
       )}
