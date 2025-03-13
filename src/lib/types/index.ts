@@ -8,6 +8,7 @@ export type { TypeComponentMedia } from "@/lib/types/building-blocks/TypeCompone
 export type { TypeComponentData } from "@/lib/types/component-blocks/TypeComponentData";
 export type { TypeComponentFooter } from "@/lib/types/component-blocks/TypeComponentFooter";
 export type { TypeComponentHeader } from "@/lib/types/component-blocks/TypeComponentHeader";
+export type { TypeComponentHero } from "@/lib/types/component-blocks/TypeComponentHero";
 export type {
   TypeComponentRegistry,
   TypeComponentRegistryLowerCased

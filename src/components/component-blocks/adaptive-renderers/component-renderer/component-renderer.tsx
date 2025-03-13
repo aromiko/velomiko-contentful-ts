@@ -1,6 +1,4 @@
-import Footer from "@/components/component-blocks/footer/footer";
-import Header from "@/components/component-blocks/header/header";
-import { ComponentRegistry } from "@/lib/configurations/component-registry";
+import { componentMapping } from "@/lib/configurations/component-registry";
 import { TypeComponentData, TypePageContentItem } from "@/lib/types";
 import { toLowerStartChar } from "@/lib/utils/string-extensions";
 import { ComponentBlocksFacade } from "@/queries/component-blocks/component-blocks-facade";
@@ -13,13 +11,6 @@ export default async function ComponentRenderer({
   content
 }: ComponentRendererProps) {
   try {
-    // Specify here only the components that will need to be directly hydrated with Contentful data
-    // Based on the mapped component __typename, <Component> will render the actual React Component
-    const componentMapping = {
-      [ComponentRegistry.Header]: Header,
-      [ComponentRegistry.Footer]: Footer
-    };
-
     // Determine the component to render based on the __typename mapping
     const Component = componentMapping[
       content.__typename

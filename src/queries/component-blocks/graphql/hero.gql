@@ -1,0 +1,20 @@
+#import "@/queries/building-blocks/graphql/fragments/basic-link.gql"
+#import "@/queries/building-blocks/graphql/fragments/basic-media.gql"
+
+query QUERY_HERO_BY_ID($id: String!, $isPreview: Boolean!) {
+  componentHero(id: $id, preview: $isPreview) {
+    heroName
+    heroTitle
+    heroBody
+    heroImage {
+      ...BasicMediaFragment
+    }
+    heroLinks {
+      basicLinkListGroupCollection {
+        items {
+          ...BasicLinkFragment
+        }
+      }
+    }
+  }
+}

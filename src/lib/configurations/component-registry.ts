@@ -1,3 +1,6 @@
+import Footer from "@/components/component-blocks/footer/footer";
+import Header from "@/components/component-blocks/header/header";
+import Hero from "@/components/component-blocks/hero/hero";
 import { toLowerStartChar } from "@/lib/utils/string-extensions";
 
 export const ComponentRegistry = {
@@ -10,6 +13,12 @@ export const ComponentRegistry = {
   Footer: "ComponentFooter",
   Header: "ComponentHeader",
   Hero: "ComponentHero"
+};
+
+export const componentMapping = {
+  [ComponentRegistry.Footer]: Footer,
+  [ComponentRegistry.Header]: Header,
+  [ComponentRegistry.Hero]: Hero
 };
 
 export const ComponentRegistryForQuery = Object.fromEntries(
