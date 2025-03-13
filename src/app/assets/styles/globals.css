@@ -12,6 +12,8 @@ body {
   }
 
   main {
+    @apply flex flex-col;
+
     flex-grow: 1;
   }
 }
