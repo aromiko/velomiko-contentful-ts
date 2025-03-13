@@ -10,6 +10,10 @@ body {
   header {
     @apply sticky top-0 z-50;
   }
+
+  main {
+    flex-grow: 1;
+  }
 }
 
 @layer base {
